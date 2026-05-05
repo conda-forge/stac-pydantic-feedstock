@@ -1,4 +1,4 @@
-{% set version = "3.5.0" %}
+{% set version = "3.5.1" %}
 
 package:
   name: stac-pydantic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/stac-pydantic/stac_pydantic-{{ version }}.tar.gz
-  sha256: 0d70f4e9d0754842a0bfd04c06e41a41af04f313de94b6dfe06c98b6c5eea4fc
+  sha256: 1332136b5b4b80a8fbb0b40b02d1ea6ff220b9f7f33f72886d4cfb4966fca3b9
 
 build:
   number: 0
