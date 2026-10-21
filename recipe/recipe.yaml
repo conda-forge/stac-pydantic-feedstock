@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  version: "3.7.1"
+
+package:
+  name: stac-pydantic
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/s/stac-pydantic/stac_pydantic-${{ version }}.tar.gz
+  sha256: 62bf04b3a7a207bb9fff785ef142c86c855a51468e55a2d0a2192b5e990bbffc
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - stac-pydantic = stac_pydantic.scripts.cli:app
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling
+  run:
+    - python >=${{ python_min }}
+    - click >=8.1.7
+    - pydantic >=2.4.1
+    - geojson-pydantic >=1.0.0
+
+tests:
+  - python:
+      imports:
+        - stac_pydantic
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+        - requests
+    script:
+      - stac-pydantic --help
+
+about:
+  summary: Pydantic data models for the STAC spec
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/CS-SI/stac-pydantic
+
+extra:
+  recipe-maintainers:
+    - gadomski
+    - sbrunato
