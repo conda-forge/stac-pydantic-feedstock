@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "3.7.1"
+  version: "3.7.2"
 
 package:
   name: stac-pydantic
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/stac-pydantic/stac_pydantic-${{ version }}.tar.gz
-  sha256: 62bf04b3a7a207bb9fff785ef142c86c855a51468e55a2d0a2192b5e990bbffc
+  sha256: ad16e604381302fd800cc7579444eadcfa31b9f72baaf3d6207380b995fc2551
 
 build:
   number: 0
